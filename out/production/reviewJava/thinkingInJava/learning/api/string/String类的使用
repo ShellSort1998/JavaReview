@@ -1,0 +1,20 @@
+
+1.String类的理解(jdk8)
+1.1类的声明
+public final class String
+    implements java.io.Serializable, Comparable<String>, CharSequence {
+    /** The value is used for character storage. */
+    private final char value[];
+
+>final:String不可被继承
+>继承与Object
+>实现了Serializable:实现了可序列化接口.凡是实现此接口的类的对象就可以通过网络或者本地流进行数据传输.
+>实现了Comparable接口:凡是实现此接口的类,其对象都可以比较大小
+
+1.2内部声明的属性
+jdk8中:
+private final char value[]; //字符串真正存储字符串的容器
+    >final:value[]数组一旦初始化,其地址不可更改
+
+jdk9以后:
+private final byte[] value; //字符串真正存储字符串的容器
